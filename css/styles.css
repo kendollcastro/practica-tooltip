@@ -1,0 +1,58 @@
+
+body{
+    width: 100px;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding-top: 100px;
+    margin: 0 auto;
+  }
+
+
+  /*Texto o elemento del cual será referencia el tooltip*/
+  
+  .tooltip{
+    font-weight: 12px;
+    color: sandybrown;
+    position: relative;
+  }
+  
+  /*Comportamiento del tooltip para volver a aparecer*/
+  
+  .tooltip:hover .tooltipText{
+    display: inline-block;
+  }
+
+
+  /*Especificaciones para modificar el comportamiento 
+  para que desaparezca y ademas agregar un poco de diseño al mismo tooltip*/
+  .tooltipText{
+    display: none;
+    position: absolute;
+    background-color: coral;
+    line-height: 20px;
+    z-index: 1;
+    text-align: center;
+    color: white;
+    font-size: 15px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    left: 0;
+    right: 0;
+    top: -40px;
+  }
+  
+  /*Usamos el selector after para lo que
+  sucede despues de estar encima del area del 
+  elemento al cual queremos agregar un tooltip*/
+  
+  .tooltipText::after{
+    content: "";
+    display: block;
+    border-top: 7px solid coral;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    position: absolute;
+    bottom: -7px;
+    left: 43px;
+  }
